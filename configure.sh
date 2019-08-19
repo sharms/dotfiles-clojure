@@ -25,6 +25,9 @@ git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
 
+# Set default monospace font for powerline
+gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro for Powerline Regular 12'
+
 # Java development environment
 sudo apt install openjdk-12-jdk
 
