@@ -17,6 +17,10 @@ sed -i 's/^ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 zsh -c 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
 sed -i 's/^plugins=(\(.*\))/plugins=(zsh-autosuggestions \1)/' ~/.zshrc
 
+# Git
+git config --global user.name "Steve Harms"
+git config --global user.email "sharms@snowfoundry.com"
+
 # Powerline Fonts
 cd $HOME/src
 mkdir -p github.com/powerline
