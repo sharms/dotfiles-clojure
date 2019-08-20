@@ -11,7 +11,7 @@ sudo apt-get install atom
 apm install chlorine ink
 
 # Shell Utils
-sudo apt-get install zsh git curl build-essential vim emacs
+sudo apt-get install zsh git curl build-essential vim emacs tmux
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sed -i 's/^ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 zsh -c 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
