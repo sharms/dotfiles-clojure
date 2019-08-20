@@ -36,3 +36,31 @@ curl -O https://download.clojure.org/install/linux-install-1.10.1.466.sh
 chmod +x linux-install-1.10.1.466.sh
 sudo ./linux-install-1.10.1.466.sh
 
+mkdir -p ~/.clojure
+cat << EOF > ~/.clojure/deps.edn
+{
+  :aliases
+  {:new {:extra-deps {seancorfield/clj-new
+                       {:mvn/version "0.7.7"}}
+         :main-opts ["-m" "clj-new.create"]}
+    :rebl {:extra-deps {
+                org.clojure/clojure {:mvn/version "1.10.0"}
+                org.clojure/core.async {:mvn/version "0.4.490"}
+                ;; deps for file datafication (0.9.149 or later)
+                org.clojure/data.csv {:mvn/version "0.1.4"}
+                org.clojure/data.json {:mvn/version "0.2.3"}
+                org.yaml/snakeyaml {:mvn/version "1.23"}
+                org.openjfx/javafx-fxml     {:mvn/version "11.0.1"}
+                org.openjfx/javafx-controls {:mvn/version "11.0.1"}
+                org.openjfx/javafx-graphics {:mvn/version "11.0.1"}
+                org.openjfx/javafx-media    {:mvn/version "11.0.1"}
+                org.openjfx/javafx-swing    {:mvn/version "11.0.1"}
+                org.openjfx/javafx-base     {:mvn/version "11.0.1"}
+                org.openjfx/javafx-web      {:mvn/version "11.0.1"}
+                com.cognitect/rebl {:local/root "/home/sharms/local/opt/REBL-0.9.218.jar"}}
+           :main-opts ["-m" "cognitect.rebl"]}
+    :socket {:jvm-opts ["-Dclojure.server.repl={:port,50505,:accept,clojure.core.server/repl}"]}
+    :comp {:extra-deps {compliment {:mvn/version "RELEASE"}}}
+  }
+}
+EOF
