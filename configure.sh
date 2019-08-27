@@ -87,3 +87,9 @@ cat << EOF > ~/.atom/keymap.cson
   'ctrl-, x':       'chlorine:run-tests-in-ns'
   'ctrl-, t':       'chlorine:run-test-for-var'
 EOF
+
+# Sound crackle hacks
+ALSA_FILE=/etc/modprobe.d/alsa-base.conf
+if [ -f "${ALSA_FILE}" ] && ! grep -E '^# Disable snd-hda-intel power saving' ${ALSA_FILE}; then
+  echo -e '\n# Disable snd-hda-intel power saving\noptions snd-hda-intel power_save=0 power_save_controller=N\n' | sudo tee >> ${ALSA_FILE}
+fi
