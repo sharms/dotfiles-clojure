@@ -97,3 +97,13 @@ fi
 # Setup NPM
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install nodejs
+
+# Setup Brave browser
+sudo apt install apt-transport-https curl
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -\n\nsource /etc/os-release\n\necho "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list\n\nsudo apt update\n\nsudo apt install brave-browser\n
+
+# Setup VSCode
+sudo snap install --classic code # or code-insiders
+
+# Setup KeepassXC
+sudo snap install keepassxc
