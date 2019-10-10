@@ -33,7 +33,7 @@ cd fonts
 gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro for Powerline Regular 12'
 
 # Java development environment
-sudo apt install openjdk-12-jdk
+sudo apt install openjdk-14-jdk rlwrap
 
 # Clojure
 curl -O https://download.clojure.org/install/linux-install-1.10.1.466.sh
